@@ -14,23 +14,28 @@
 <meta property="og:site_name" content="KABA-Store">
 <meta property="og:title" content="KABA-Store – Téléphones et accessoires à Abidjan">
 <meta property="og:description" content="Le bon téléphone, au bon prix. Garantie 12 mois, troc possible, commande sur WhatsApp. Yopougon Saint-André, Abidjan.">
-<meta property="og:url" content="https://VOTRE-SITE.com/">
-<meta property="og:image" content="https://VOTRE-SITE.com/logo.png">
+<meta property="og:url" content="https://yannxflex-netizen.github.io/KABA-Store-/">
+<meta property="og:image" content="https://yannxflex-netizen.github.io/KABA-Store-/logo.png">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobilePhoneStore","name":"KABA-Store","description":"Téléphones et accessoires à Yopougon, Abidjan. Garantie 12 mois, troc possible.","url":"https://VOTRE-SITE.com/","telephone":"+2250100292559","email":"flexyanns@gmail.com","image":"https://VOTRE-SITE.com/logo.png","address":{"@type":"PostalAddress","streetAddress":"Yopougon Saint-André, entre le China Yop et le resto Samer","addressLocality":"Abidjan","addressCountry":"CI"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"00:00","closes":"23:59"}}
+{"@context":"https://schema.org","@type":"MobilePhoneStore","name":"KABA-Store","description":"Téléphones et accessoires à Yopougon, Abidjan. Garantie 12 mois, troc possible.","url":"https://yannxflex-netizen.github.io/KABA-Store-/","telephone":"+2250100292559","email":"flexyanns@gmail.com","image":"https://yannxflex-netizen.github.io/KABA-Store-/logo.png","address":{"@type":"PostalAddress","streetAddress":"Yopougon Saint-André, entre le China Yop et le resto Samer","addressLocality":"Abidjan","addressCountry":"CI"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"00:00","closes":"23:59"}}
 </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="bnr" hidden role="status"><span id="bnrt"></span><button id="bnrx" type="button" aria-label="Fermer l’annonce">×</button></div>
 <header><div class="wrap"><a class="logo" href="#" style="display:flex;align-items:center;gap:10px"><img src="logo.png" alt="" width="40" height="40" style="border-radius:50%">KABA-Store</a><button class="cartbtn" id="open" aria-label="Ouvrir le panier">Panier (<span id="count">0</span>)</button></div><div class="sbar"><input id="q" type="search" placeholder="Rechercher un téléphone, un accessoire…" aria-label="Rechercher"></div></header>
 
 <main class="wrap">
 <section class="hero">
 <h1>Le bon téléphone, au bon prix.</h1>
 <p>Téléphones et accessoires à Yopougon, Abidjan. Choisissez, ajoutez au panier et commandez sur WhatsApp. Nous sommes ouverts 24 h/24.</p>
+<div class="btns">
 <a class="cta" href="#catalogue">Voir le catalogue</a>
+<a class="ghost" href="tel:+2250100292559">Appeler</a>
+<a class="ghost" href="https://maps.app.goo.gl/QSysAEtHVzSYr18VA" target="_blank" rel="noopener">Itinéraire</a>
+</div>
 </section>
 
 <ul class="perks">
@@ -44,21 +49,48 @@
 <h2>Catalogue</h2>
 <div class="chips" id="chips" role="group" aria-label="Filtrer par catégorie"></div>
 <div class="chips" id="bchips" role="group" aria-label="Filtrer par marque" hidden></div>
+<div class="chips" id="pchips" role="group" aria-label="Filtrer par budget" hidden></div>
 <label class="sortbar">Trier par <select id="sort"><option value="new">Plus récents</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select></label>
 <div class="grid" id="grid"></div>
+</section>
+
+<section id="rate" class="box">
+<h2>Notez KABA-Store</h2>
+<p id="ravg" class="meta"></p>
+<div id="rbody">
+<div id="stars" role="group" aria-label="Note de 1 à 5"></div>
+<label>Commentaire (facultatif)<textarea id="rcom" rows="2" maxlength="300" placeholder="Votre avis sur la boutique…"></textarea></label>
+<button class="cta" id="rsend" type="button" style="width:100%">Envoyer ma note</button>
+</div>
+<p id="rmsg2" role="status"></p>
+</section>
+
+<section id="avis" hidden>
+<h2>Ils nous font confiance</h2>
+<div class="rev" id="revs"></div>
 </section>
 </main>
 
 <footer><div class="wrap">
-<div><b>KABA-Store</b><br>Abidjan, Yopougon Saint-André<br>Entre le China Yop et le resto Samer<br><a href="https://maps.app.goo.gl/QSysAEtHVzSYr18VA" target="_blank" rel="noopener">Voir sur Google Maps</a></div>
+<div><b id="secret">KABA-Store</b><br>Abidjan, Yopougon Saint-André<br>Entre le China Yop et le resto Samer<br><a href="https://maps.app.goo.gl/QSysAEtHVzSYr18VA" target="_blank" rel="noopener">Voir sur Google Maps</a></div>
 <div><b>Contact</b><br><a href="mailto:flexyanns@gmail.com">flexyanns@gmail.com</a><br><a href="tel:+2250100292559">01 00 29 25 59</a></div>
 <div><b>Horaires</b><br>Lundi–samedi, 24 h/24</div>
-<div><a href="admin.html">Espace administrateur</a></div>
 </div></footer>
 
 <aside id="drawer" aria-label="Panier" aria-hidden="true">
 <div class="dh"><h2 style="margin:0">Votre panier</h2><button class="close" id="close" aria-label="Fermer">×</button></div>
 <div id="lines"></div>
+<div id="sugg" hidden><h3>Souvent ajoutés avec</h3><div id="sgl"></div></div>
+<fieldset class="mode"><legend>Réception de la commande</legend>
+<label><input type="radio" name="mode" value="retrait" checked> Retrait en magasin</label>
+<label><input type="radio" name="mode" value="livraison"> Livraison à Abidjan</label>
+</fieldset>
+<div id="liv" hidden>
+<label>Votre quartier<input id="quartier" list="qlist" placeholder="Ex : Yopougon Selmer" autocomplete="off"></label>
+<datalist id="qlist"><option value="Yopougon"><option value="Yopougon Selmer"><option value="Yopougon Niangon"><option value="Yopougon Sicogi"><option value="Yopougon Maroc"><option value="Yopougon Andokoi"><option value="Cocody"><option value="Cocody Angré"><option value="Cocody Riviera"><option value="Cocody Deux Plateaux"><option value="Marcory"><option value="Treichville"><option value="Abobo"><option value="Adjamé"><option value="Plateau"><option value="Koumassi"><option value="Port-Bouët"><option value="Attécoubé"><option value="Bingerville"><option value="Songon"></datalist>
+<label>Point de repère (facultatif)<input id="repere" placeholder="Ex : près de la pharmacie"></label>
+<p id="lhint" class="meta" hidden>Indiquez votre quartier pour pouvoir commander. Les frais de livraison seront confirmés sur WhatsApp.</p>
+</div>
 <div class="total"><span>Total</span><span id="total">0 FCFA</span></div>
 <a class="cta act" id="order" href="#" target="_blank" rel="noopener">Commander (paiement en magasin)</a>
 <a class="alt act" id="promo" href="#" target="_blank" rel="noopener">Demander une réduction</a>
@@ -70,6 +102,12 @@
 </div>
 <p id="msg" role="status"></p>
 </aside>
+
+<div id="cmpbar" hidden><span id="cmpinfo"></span><button id="cmpgo" type="button">Comparer</button><button id="cmpx" type="button">Vider</button></div>
+
+<div id="dtl" hidden role="dialog" aria-modal="true" aria-label="Détails du produit">
+<div class="sheet"><button id="dtx" type="button" aria-label="Fermer">×</button><div id="dtc"></div></div>
+</div>
 
 <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Photos du produit">
 <button id="lbx" type="button" aria-label="Fermer la photo">×</button>
