@@ -25,6 +25,7 @@
 
 <section id="panel" hidden>
 <p>Connecté : <b id="who"></b> <button class="sm" id="logout" type="button">Se déconnecter</button></p>
+<p><a href="#avisbox">Avis clients ↓</a> · <a href="#statbox">Statistiques ↓</a> · <a href="#bannerbox">Bandeau ↓</a></p>
 
 <div class="box">
 <h2 id="ftitle">Publier un produit</h2>
@@ -34,8 +35,15 @@
 <label>Marque (facultatif)<input id="brand" list="brands" placeholder="Ex : iPhone, Samsung, Tecno"><datalist id="brands"><option value="iPhone"><option value="Samsung"><option value="Tecno"><option value="Infinix"><option value="Xiaomi"><option value="Itel"><option value="Oppo"><option value="Huawei"></datalist></label>
 <label>État du téléphone<select id="state"><option value="">Non précisé</option><option>Neuf</option><option>Occasion</option><option>Reconditionné</option></select></label>
 <label>Prix en FCFA<input id="price" type="number" min="0" step="500" required placeholder="Ex : 95000"></label>
+<label>Quantité en stock (facultatif)<input id="qty" type="number" min="0" step="1" placeholder="Ex : 3 (laisser vide si non suivi)"></label>
 <label>Ancien prix en FCFA (facultatif, pour afficher une promo)<input id="old" type="number" min="0" step="500" placeholder="Ex : 120000"></label>
 <label>Description<textarea id="desc" rows="3" placeholder="Stockage, état, couleur, garantie…"></textarea></label>
+<label>Stockage (facultatif)<input id="f_storage" placeholder="Ex : 128 Go"></label>
+<label>RAM (facultatif)<input id="f_ram" placeholder="Ex : 4 Go"></label>
+<label>Batterie (facultatif)<input id="f_battery" placeholder="Ex : 89 %"></label>
+<label>Couleur (facultatif)<input id="f_color" placeholder="Ex : Bleu"></label>
+<label>Garantie (facultatif)<input id="f_warranty" placeholder="Ex : 12 mois"></label>
+<label>Autres caractéristiques (une par ligne, facultatif)<textarea id="specs" rows="3" placeholder="Écran : 6,1 pouces&#10;Appareil photo : 12 MP"></textarea></label>
 <label>Photos (5 maximum)<input id="photo" type="file" accept="image/*" multiple></label>
 <label class="chk"><input id="sold" type="checkbox"> Marquer comme vendu</label>
 <label class="chk"><input id="feat" type="checkbox"> Mettre en vedette (en haut du catalogue)</label>
@@ -49,6 +57,33 @@
 <div class="box">
 <h2>Vos produits (<span id="n">0</span>)</h2>
 <div id="plist"><p class="empty">Aucun produit pour l’instant.</p></div>
+</div>
+<div class="box" id="avisbox">
+<h2>Avis clients (<span id="rn">0</span>)</h2>
+<form id="rform">
+<label>Nom du client (facultatif)<input id="rname" placeholder="Ex : Awa, Yopougon"></label>
+<label>Message du client<textarea id="rtext" rows="3" required placeholder="Ex : Téléphone conforme, livraison rapide. Merci !"></textarea></label>
+<label>Photo (facultatif)<input id="rphoto" type="file" accept="image/*"></label>
+<img id="rprev" alt="Aperçu" hidden style="max-width:160px;margin-top:10px;border-radius:8px">
+<button class="cta" id="rsave" type="submit" style="width:100%">Publier l’avis</button>
+<p id="rmsg" role="status"></p>
+</form>
+<div id="rlist"></div>
+</div>
+<div class="box" id="statbox">
+<h2>Statistiques</h2>
+<p class="meta">Photos vues = clics sur la photo. Les produits les plus demandés sont en haut.</p>
+<div id="slist"><p class="empty">Aucune donnée pour l’instant.</p></div>
+</div>
+<div class="box" id="bannerbox">
+<h2>Bandeau d’annonce</h2>
+<p class="meta">Un message affiché tout en haut du site (promo, nouvel arrivage…).</p>
+<form id="bform">
+<label>Message<input id="btext" maxlength="120" placeholder="Ex : Promo ce week-end sur les iPhone !"></label>
+<label class="chk"><input id="bon" type="checkbox"> Afficher le bandeau sur le site</label>
+<button class="cta" id="bsave" type="submit" style="width:100%">Enregistrer le bandeau</button>
+<p id="bmsg" role="status"></p>
+</form>
 </div>
 </section>
 
